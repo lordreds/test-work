@@ -9,26 +9,17 @@
 	<h1>Турнирная таблица</h1>
 
 	<!-- Формы кнопок -->
-	<div id="divBut">
-		<form id="but1" method="POST">
-    	<input type="submit" name="sortBySumm" value="Сортировать по сумме" />
-		</form>
-		
-		<form id="but2" method="POST">
-	    	<input type="submit" name="sortBy1" value="Сортировать 1 заезд" />
-		</form>
-
-		<form id="but3" method="POST">
-	    	<input type="submit" name="sortBy2" value="Сортировать 2 заезд" />
+	<div class="divBut">
+		<form class="b1" method="POST">
+			<div class="div2">	
+		    	<input type="submit" class="but" name="sortBy1" value="Сортировать 1 заезд" />
+		    	<input type="submit" class="but" name="sortBy2" value="Сортировать 2 заезд" />
+		    	<input type="submit" class="but" name="sortBy3" value="Сортировать 3 заезд" />
+		    	<input type="submit" class="but" name="sortBy4" value="Сортировать 4 заезд" />
+		    	<input type="submit" class="but" name="sortBySumm" value="Сортировать по сумме" />
+			</div>
 		</form>
 
-		<form id="but4" method="POST">
-	    	<input type="submit" name="sortBy3" value="Сортировать 3 заезд" />
-		</form>
-
-		<form id="but5" method="POST">
-	    	<input type="submit" name="sortBy4" value="Сортировать 4 заезд" />
-		</form>
 	</div>
 
 	<?php	
