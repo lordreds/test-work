@@ -1,4 +1,5 @@
 #tableS{
+	margin-top: 30px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -16,7 +17,31 @@ body{
 h1{
 	text-align: center;
 	font-family: sans-serif;
-	color: #3A3138;
+	color: #000000;
+	padding-bottom: 10px;
+}
+#divBut{
+	border: 1px solid black;
+	height: 50px;
+	text-align: center;
+     background-color: #FFF;
+}
+.divBut input{
+    background-color: #000000;
+    border: none;
+    color: #FFF;
+    font-size: 13px;
+    font-family: sans-serif;
+    border-radius: 15px;
+    padding: 10px;
+    margin-right: 34px;
+}
+.divBut input:hover{
+    background-color: #C55656;
+}
+.div2{
+	display: flex;
+  	justify-content: center;  	
 }
 th{
 	font-size: 18px;
@@ -24,25 +49,4 @@ th{
 }
 td{
 	padding: 5px;
-}
-#but1{
-	position: absolute;
-	left: 65%;
-
-}
-#but2{
-	position: absolute;
-	left: 25%;
-}
-#but3{
-	position: absolute;
-	left: 35%;
-}
-#but4{
-	position: absolute;
-	left: 45%;
-}
-#but5{
-	position: absolute;
-	left: 55%;
 }
