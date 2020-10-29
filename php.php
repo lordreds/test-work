@@ -134,5 +134,9 @@
 		$i++;
 	endforeach; ?>
 	</table>
+	<div class="myName">
+		<p>Красноперов Павел</p>
+	</div>
+	
 </body>
 </html>
