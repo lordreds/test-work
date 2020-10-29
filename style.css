@@ -1,0 +1,46 @@
+#tableS{
+	margin-top: 70px;
+	margin-left: 180px;
+	border-collapse: separate;
+	border-spacing: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	background: #ece9e0;
+	border: 1px solid black;
+}
+body{
+	background: #cbdfef;
+}
+h1{
+	text-align: center;
+	font-family: sans-serif;
+	color: #3A3138;
+}
+th{
+	font-size: 18px;
+	padding: 5px;
+}
+td{
+	padding: 5px;
+}
+#but1{
+	position: absolute;
+	left: 65%;
+
+}
+#but2{
+	position: absolute;
+	left: 25%;
+}
+#but3{
+	position: absolute;
+	left: 35%;
+}
+#but4{
+	position: absolute;
+	left: 45%;
+}
+#but5{
+	position: absolute;
+	left: 55%;
+}
