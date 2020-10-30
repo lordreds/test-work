@@ -109,7 +109,7 @@
    				foreach($data_new as $items){	
    					while ($i2 < count($items["result"])) {
    						foreach ($items["result"] as $zaezd) {
-   							echo "<th>Заедз ".$i2."</th>";
+   							echo "<th>Заезд ".$i2."</th>";
    							$i2++;
    						}
    					}   					
