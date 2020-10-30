@@ -17,29 +17,6 @@ h1{
 	color: #000000;
 	padding-bottom: 10px;
 }
-#divBut{
-	text-align: center;
-     background-color: #FFF;
-}
-.divBut input{
-    background-color: #000000;
-    border: none;
-    color: #FFF;
-    font-size: 13px;
-    font-family: sans-serif;
-    border-radius: 15px;
-    padding: 10px;
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.divBut input:hover{
-    background-color: #C55656;
-}
-.div2{
-	display: flex;
-  	justify-content: center;
-  	padding: 10px;  
-}
 th{
 	font-size: 18px;
 	padding: 5px;
