@@ -100,15 +100,22 @@
 
   	<table id="tableS" border=1>
   		<tr>
-  			<th>Место</th>	
+  			<th>Место</th>			
    			<th>ФИО</th>
    			<th>Город</th>
    			<th>Машина</th>
-   			<th>Заезд 1</th>
-   			<th>Заезд 2</th>
-   			<th>Заезд 3</th>
-   			<th>Заезд 4</th>
-   			<th>Сумма</th>
+   			<?php
+   				$i2=1;
+   				foreach($data_new as $items){	
+   					while ($i2 < count($items["result"])) {
+   						foreach ($items["result"] as $zaezd) {
+   							echo "<th>Заедз ".$i2."</th>";
+   							$i2++;
+   						}
+   					}   					
+   				}										
+   			?>
+   			<th>Сумма</th>				
   		</tr>
 
   		<!-- Заполнение таблицы  -->
@@ -116,19 +123,21 @@
 		$i=1;
 		foreach($data_new as $items): ?>
 		<tr>	
-			<td><?php echo $i;?></td>
+			<td><?php echo $i;?></td>		
 			<td><?php echo $items["name"]; ?></td>
 			<td><?php echo $items["city"]; ?></td>
 			<td><?php echo $items["car"]; ?></td>
+
 			<?php
 
 			#Заполнение результатов заездов
-			foreach($items["result"] as $zaezd){
-			echo "<td>".$zaezd."</td>";
+			foreach($items["result"] as $zaezd){	
+				echo "<td>".$zaezd."</td>";			
 			}
 
 			?>
-			<td><?php echo $items["summa"]?></td>	
+			<td><?php echo $items["summa"]?></td>
+				
 		</tr>
 		<?php 
 		$i++;
