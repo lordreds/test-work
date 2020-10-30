@@ -4,24 +4,11 @@
 	<meta charset="utf-8">
 	<title>Турнирная таблица</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="js.js"></script>
 </head>
 <body>
 	<h1>Турнирная таблица</h1>
-
-	<!-- Формы кнопок -->
-	<div class="divBut">
-		<form class="b1" method="POST">
-			<div class="div2">	
-		    	<input type="submit" class="but" name="sortBy1" value="Сортировать 1 заезд" />
-		    	<input type="submit" class="but" name="sortBy2" value="Сортировать 2 заезд" />
-		    	<input type="submit" class="but" name="sortBy3" value="Сортировать 3 заезд" />
-		    	<input type="submit" class="but" name="sortBy4" value="Сортировать 4 заезд" />
-		    	<input type="submit" class="but" name="sortBySumm" value="Сортировать по сумме" />
-			</div>
-		</form>
-
-	</div>
-
+	<p>Для сортировки нажмите на заголовок столбца</p>
 	<?php	
 	# Загрузка json файлов
 		$res = file_get_contents('data_cars.json');
@@ -57,91 +44,56 @@
 		}
 		uasort($data_new, 'stockSort');
 
-	# Сортировка суммы по нажатию кнопки
-	if(isset($_POST['sortBySumm'])){
-		function sortBySumm($a, $b){
-		return($a['summa'] < $b['summa']);
-		}
-		uasort($data_new, 'sortBySumm');
-	}
-
-	# Сортировка 1 заезда
-    if(isset($_POST['sortBy1'])){
-        function sortBy1($a, $b){
-			return($a['result'][0] < $b['result'][0]);
-		}
-		uasort($data_new, 'sortBy1');
-    }
-
-	# Сортировка 2 заезда
-    if(isset($_POST['sortBy2'])){
-        function sortBy2($a, $b){
-			return($a['result'][1] < $b['result'][1]);
-		}
-		uasort($data_new, 'sortBy2');
-    }
-
-	# Сортировка 3 заезда
-    if(isset($_POST['sortBy3'])){
-        function sortBy3($a, $b){
-			return($a['result'][2] < $b['result'][2]);
-		}
-		uasort($data_new, 'sortBy3');
-    }
-
-	# Сортировка 4 заезда
-    if(isset($_POST['sortBy4'])){
-        function sortBy4($a, $b){
-			return($a['result'][3] < $b['result'][3]);
-		}
-		uasort($data_new, 'sortBy4');
-    }
 	?>
 
-  	<table id="tableS" border=1>
-  		<tr>
-  			<th>Место</th>			
-   			<th>ФИО</th>
-   			<th>Город</th>
-   			<th>Машина</th>
-   			<?php
-   				$i2=1;
-   				foreach($data_new as $items){	
-   					while ($i2 < count($items["result"])) {
-   						foreach ($items["result"] as $zaezd) {
-   							echo "<th>Заезд ".$i2."</th>";
-   							$i2++;
-   						}
-   					}   					
-   				}										
-   			?>
-   			<th>Сумма</th>				
-  		</tr>
+  	<table class="table_sort" id="tableS" border=1>
+  		<thead>
+  			<tr>
+	  			<th>Место</th>			
+	   			<th>ФИО</th>
+	   			<th>Город</th>
+	   			<th>Машина</th>
+	   			<?php
+	   				$i2=1;
+	   				foreach($data_new as $items){	
+	   					while ($i2 < count($items["result"])) {
+	   						foreach ($items["result"] as $zaezd) {
+	   							echo "<th>Заезд ".$i2."</th>";
+	   							$i2++;
+	   						}
+	   					}   					
+	   				}										
+	   			?>
+	   			<th>Сумма</th>				
+  			</tr>
+  		</thead>
 
-  		<!-- Заполнение таблицы  -->
-		<?php 
-		$i=1;
-		foreach($data_new as $items): ?>
-		<tr>	
-			<td><?php echo $i;?></td>		
-			<td><?php echo $items["name"]; ?></td>
-			<td><?php echo $items["city"]; ?></td>
-			<td><?php echo $items["car"]; ?></td>
+  		<tbody>
+	  		<!-- Заполнение таблицы  -->
+			<?php 
+			$i=1;
+			foreach($data_new as $items): ?>
+			<tr>	
+				<td><?php echo $i;?></td>		
+				<td><?php echo $items["name"]; ?></td>
+				<td><?php echo $items["city"]; ?></td>
+				<td><?php echo $items["car"]; ?></td>
 
-			<?php
+				<?php
 
-			#Заполнение результатов заездов
-			foreach($items["result"] as $zaezd){	
-				echo "<td>".$zaezd."</td>";			
-			}
+				#Заполнение результатов заездов
+				foreach($items["result"] as $zaezd){	
+					echo "<td>".$zaezd."</td>";			
+				}
 
-			?>
-			<td><?php echo $items["summa"]?></td>
-				
-		</tr>
-		<?php 
-		$i++;
-	endforeach; ?>
+				?>
+				<td><?php echo $items["summa"]?></td>
+					
+			</tr>
+			<?php 
+			$i++;
+			endforeach; ?>
+  		</tbody>
 	</table>
 	<div class="myName">
 		<p>Красноперов Павел</p>
